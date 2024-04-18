@@ -11,6 +11,8 @@ public class PlayerController : MonoBehaviour
 
     Animator animController;
     Rigidbody rigidBody;
+    int randomKick;
+    bool isCrouching = false;
 
     // Start is called before the first frame update
     void Start()
@@ -40,14 +42,19 @@ public class PlayerController : MonoBehaviour
         else
         {
             animController.SetBool("Walk", false);
-
+            
             // crouching with 'C' key (only when not moving)
-            if (Input.GetKey(KeyCode.C))
-                animController.SetBool("Crouch", true);
-            else
-                animController.SetBool("Crouch", false);
+            if (Input.GetKeyDown(KeyCode.C)){
+                isCrouching = !isCrouching; // Toggle crouching state
+                animController.SetBool("Crouch", isCrouching);
+            }
         }
 
-
+        // Press SpaceBar to kick
+        if(Input.GetKeyDown(KeyCode.Space)){
+            randomKick = Random.Range(0, 3);
+            Debug.Log(randomKick);
+            animController.SetTrigger("Kick" + randomKick);
+        }
     }
 }
