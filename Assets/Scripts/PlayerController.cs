@@ -53,7 +53,6 @@ public class PlayerController : MonoBehaviour
         // Press SpaceBar to kick
         if(Input.GetKeyDown(KeyCode.Space)){
             randomKick = Random.Range(0, 3);
-            Debug.Log(randomKick);
             animController.SetTrigger("Kick" + randomKick);
         }
     }
