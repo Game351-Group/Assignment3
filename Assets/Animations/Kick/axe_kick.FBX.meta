@@ -488,7 +488,23 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 0.3060538
+        functionName: StartKick
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 47c7c2dffe9f859409c49f27f67b8e8e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
+      - time: 0.7267605
+        functionName: EndKick
+        data: 
+        objectReferenceParameter: {fileID: 11500000, guid: 47c7c2dffe9f859409c49f27f67b8e8e,
+          type: 3}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask:
       - path: 
         weight: 1
@@ -710,7 +726,7 @@ ModelImporter:
         weight: 1
       maskType: 0
       maskSource: {instanceID: 0}
-      additiveReferencePoseFrame: 0
+      additiveReferencePoseFrame: 185
     isReadable: 1
   meshes:
     lODScreenPercentages: []
