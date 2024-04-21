@@ -41,6 +41,8 @@ S: Move backward
 A: Turn left
 D: Turn right
 C: Crouch
+M: Toggle Weather
+F: Fire Gun
 
 Credits:
  
@@ -55,3 +57,6 @@ Media assets were used from the following sources:
 (4) https://www.videvo.net/royalty-free-sound-effects/
 (5) https://freesound.org/search/
 (6) https://www.youtube.com/watch?v=JN8nj2-7G34
+(7) https://assetstore.unity.com/packages/vfx/particles/fire-explosions/explosive-realistic-vfx-texture-free-34541
+(8) https://assetstore.unity.com/packages/audio/sound-fx/thunderstorms-sfx-pack-149736
+
