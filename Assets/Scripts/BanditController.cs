@@ -5,6 +5,8 @@ using UnityEngine;
 public class BanditController : MonoBehaviour
 {
     [SerializeField]
+    private AudioSource audio;
+    [SerializeField]
     private GameObject bandit;
     [SerializeField]
     private GameObject blood;
@@ -13,6 +15,7 @@ public class BanditController : MonoBehaviour
     {
         if (other.CompareTag("Bullet"))
         {
+            audio.PlayOneShot(audio.clip, .7f);
             Instantiate(blood, other.transform.position, other.transform.rotation);
             animController.SetInteger("Chance", Random.Range(0, 2));
             animController.SetTrigger("Die");

@@ -5,6 +5,8 @@ using UnityEngine;
 public class Shooting : MonoBehaviour
 {
     [SerializeField]
+    private AudioSource audio;
+    [SerializeField]
     private GameObject bullet;
     float NextFire;
     [SerializeField]
@@ -20,6 +22,7 @@ public class Shooting : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && Time.time > NextFire)
         {
+            audio.PlayOneShot(audio.clip, .7f);
             NextFire = Time.time + FireRate;
             Instantiate(bullet, transform.position, transform.rotation);
         }
