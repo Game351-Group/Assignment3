@@ -19,33 +19,44 @@ public class PlayerController : MonoBehaviour
     public Collider leftFootCollider;
     public Collider rightFootCollider;
 
+    // Start is called before the first frame update
     void Start()
     {
+        // get references to the animation controller of hero
+        // character and player's corresponding rigid body
         animController = hero.GetComponent<Animator>();
         rigidBody = GetComponent<Rigidbody>();
+
         leftFootCollider.enabled = false;
         rightFootCollider.enabled = false;
     }
 
+    // Update is called once per frame
     void Update()
     {
+        // W/A/S/D input as a combined rotation and movement vector
         Vector3 input = new Vector3(0, Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"));
-        if (input.magnitude > 0.001 && !animController.GetBool("Crouch"))
+
+        // allow movement when input detected and not crouching
+        if (input.magnitude > 0.001 && !animController.GetBool ("Crouch"))
         {
+            // rotations are about y axis
             rigidBody.AddRelativeTorque(new Vector3(0, input.y * impulseTorque * Time.deltaTime, 0));
+            // motion is forward/backward (about z axis)
             rigidBody.AddRelativeForce(new Vector3(0, 0, input.z * impulseForce * Time.deltaTime));
             animController.SetBool("Walk", true);
         }
         else
         {
+            // crouching with 'C' key (only when not moving)
             animController.SetBool("Walk", false);
             if (Input.GetKeyDown(KeyCode.C))
             {
-                isCrouching = !isCrouching;
+                isCrouching = !isCrouching; // Toggle crouching state
                 animController.SetBool("Crouch", isCrouching);
             }
         }
-
+        // Press SpaceBar to kick
         if (Input.GetKeyDown(KeyCode.Space))
         {
             randomKick = Random.Range(0, 3);
@@ -77,7 +88,7 @@ public class PlayerController : MonoBehaviour
             if (rb != null)
             {
                 Vector3 forceDirection = other.transform.position - transform.position;
-                forceDirection.y = 0; // 수평 방향으로만 힘을 가하도록
+                forceDirection.y = 0;
                 rb.AddForce(forceDirection.normalized * kickForce, ForceMode.Impulse);
             }
         }
