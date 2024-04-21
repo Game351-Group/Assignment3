@@ -77,7 +77,7 @@ public class PlayerController : MonoBehaviour
             if (rb != null)
             {
                 Vector3 forceDirection = other.transform.position - transform.position;
-                forceDirection.y = 0; // 수평 방향으로만 힘을 가하도록
+                forceDirection.y = 0;
                 rb.AddForce(forceDirection.normalized * kickForce, ForceMode.Impulse);
             }
         }
