@@ -43,6 +43,7 @@ D: Turn right
 C: Crouch
 M: Toggle Weather
 F: Fire Gun
+Space: Kick
 
 Credits:
  
