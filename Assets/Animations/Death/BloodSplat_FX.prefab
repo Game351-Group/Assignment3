@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 499110}
   - component: {fileID: 19808544}
   - component: {fileID: 19951176}
-  - component: {fileID: -112398794815843277}
+  - component: {fileID: 4215531558612999089}
   m_Layer: 0
   m_Name: BloodSplat_FX
   m_TagString: Untagged
@@ -4577,7 +4577,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4628,7 +4627,7 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
---- !u!114 &-112398794815843277
+--- !u!114 &4215531558612999089
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -5,15 +5,16 @@ TagManager:
   serializedVersion: 2
   tags:
   - Kickable
+  - Bullet
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Sherrif
   - Water
   - UI
-  - 
-  - 
+  - Bandit
+  - SherrifBullet
   - 
   - 
   - 
