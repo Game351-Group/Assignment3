@@ -4,7 +4,7 @@ using Cinemachine;
 public class CameraSwitcher : MonoBehaviour
 {
     [SerializeField] private CinemachineVirtualCamera firstPersonCamera;
-    [SerializeField] private CinemachineVirtualCamera thirdPersonCamera;
+    [SerializeField] private CinemachineFreeLook thirdPersonCamera;
 
     // Start is called before the first frame update
     void Start()
@@ -24,13 +24,11 @@ public class CameraSwitcher : MonoBehaviour
             firstPersonCamera.enabled = !firstPersonCamera.enabled;
         }
 
-        if (Input.GetKeyDown(KeyCode.R))
+        if (Input.GetKeyDown(KeyCode.R) && thirdPersonCamera.enabled)
         {
-            // Reset to default view, typically third person
-            if (thirdPersonCamera.enabled)
-            {
-                // Implement logic to reset third person camera orientation if needed
-            }
+            // Reset the third person camera to the default view
+            thirdPersonCamera.m_XAxis.Value = 0f;
+            thirdPersonCamera.m_YAxis.Value = 0.5f;
         }
     }
 }
