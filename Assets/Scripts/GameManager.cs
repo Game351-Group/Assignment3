@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
         }
         DisableCutsceneObjects();
         player.GetComponent<PlayerController>().enabled = true;
+        player.GetComponent<CameraSwitcher>().enabled = true;
     }
 
     void DisableCutsceneObjects()
