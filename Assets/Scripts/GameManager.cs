@@ -90,6 +90,16 @@ public class GameManager : MonoBehaviour
                 child.gameObject.SetActive(true);
             }
         }
+        DisableCutsceneObjects();
         player.GetComponent<PlayerController>().enabled = true;
+    }
+
+    void DisableCutsceneObjects()
+    {
+        GameObject[] cutsceneObjects = GameObject.FindGameObjectsWithTag("CutScene");
+        foreach (GameObject obj in cutsceneObjects)
+        {
+            obj.SetActive(false);
+        }
     }
 }
