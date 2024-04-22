@@ -11,6 +11,7 @@ public class Shooting : MonoBehaviour
     float NextFire;
     [SerializeField]
     private float FireRate;
+
     // Start is called before the first frame update
     void Start()
     {

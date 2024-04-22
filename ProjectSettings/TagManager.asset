@@ -8,6 +8,7 @@ TagManager:
   - Explodable
   - Bullet
   - CutScene
+  - NoAud
   layers:
   - Default
   - TransparentFX

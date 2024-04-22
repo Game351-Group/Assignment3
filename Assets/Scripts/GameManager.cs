@@ -93,6 +93,17 @@ public class GameManager : MonoBehaviour
         DisableCutsceneObjects();
         player.GetComponent<PlayerController>().enabled = true;
         player.GetComponent<CameraSwitcher>().enabled = true;
+
+        // Enable Bandit Taunt script on objects tagged with 'NoAud'
+        GameObject[] noAudObjects = GameObject.FindGameObjectsWithTag("NoAud");
+        foreach (GameObject obj in noAudObjects)
+        {
+            BanditTaunt banditTaunt = obj.GetComponent<BanditTaunt>();
+            if (banditTaunt != null)
+            {
+                banditTaunt.enabled = true;
+            }
+        }
     }
 
     void DisableCutsceneObjects()
